@@ -1,0 +1,47 @@
+.header{
+    height: 80px;
+}
+.sidebar{
+    height: 500px;
+    background-color: rgb(95, 145, 148);
+}
+.main{
+    height: 500px;
+    // background-color:azure;
+}
+.footer{
+    height: 110px;
+}
+.btn{
+    background-color: rgb(95, 145, 148);
+    color: white;
+    font-weight: bold;
+}
+.icons{
+    border: 1px solid white;
+    border-radius: 40px;
+    padding: 8px;
+    color: white;
+}
+.icons:hover{
+    background-color: white;
+    color: black;
+}
+p:hover{
+    color: white;   
+    text-decoration: underline;
+    transform: translate(10px);
+}
+p{
+    padding-top: 20px;
+}
+h6{
+    padding-top: 20px;
+}
+#img{
+    background-image: url(https://free4kwallpapers.com/uploads/originals/2021/04/13/minimalist-code-wallpaper.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%; 
+    width: 100%;  
+}

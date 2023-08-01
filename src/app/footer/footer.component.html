@@ -1,0 +1,30 @@
+<div class="page">
+<div class="container pt-5">
+    <div class="float-end pb-3">
+        <button class="btn btn-success" routerLink="/header/detail">New Job</button>
+    </div>
+<table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>JOB TITLE</th>
+        <th>DEPARTMENT</th>
+        <th>JOB TYPE</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let values of value.data.tableData; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{values.jobTitle}}</td>
+        <td>{{values.department}}</td>
+        <td>{{values.jobType}}</td>
+        <td>
+          <button class="btn btn-info btn-sm" (click)="edit(values.id)">Edit</button>&nbsp;
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

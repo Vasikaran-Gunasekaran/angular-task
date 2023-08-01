@@ -1,0 +1,68 @@
+<div class="page">
+    <div class="container">
+      <button class="btn btn-success float-end btn-lg" (click)="onclick()">Submit</button>
+    <div class="d-flex pt-3">
+        <div class="card col-lg-6 col-md-6 col-12 mt-5">
+            <div class="card-body">
+                <form [formGroup]="mainform">
+                    <div class="pt-4">
+                        <input type="text" name="title" id="title" class="form-control input" formControlName="jobTitle"
+                            placeholder="Job Title">
+                            <p *ngIf="(Validation && f['jobTitle'].errors)" style="color: red;">Required</p>
+                    </div>
+                    <div class="pt-4">
+                        <input type="text" name="dpt" id="dpt" class="form-control input" formControlName="department"
+                            placeholder="Department">
+                            <p *ngIf="(Validation && f['department'].errors)" style="color: red;">Required</p>
+                    </div>
+                    <div class="pt-4">
+                    <select class="form-select input" id="Choose" name="choose" formControlName="jobType">
+                        <option value="" [selected]="true">Choose job type</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Onsite">Onsite</option>
+                    </select>
+                    <p *ngIf="(Validation && f['jobType'].errors)" style="color: red;">Required</p>
+                    </div>
+                    <div class="pt-4">
+                        <select class="form-select input" id="jobLocationId" name="jobLocationId"  formControlName="jobLocationId">
+                            <option value="" [selected]="true">Choose job Location</option>
+                            <option *ngFor="let city of cites.data" value="{{city.id}}">{{city.countryName}}</option>
+                        </select>
+                        <p *ngIf="(Validation && f['jobLocationId'].errors)" style="color: red;">Required</p>
+                    </div>
+                    <div class="pt-4">
+                        <label class="pb-3">Job Description :</label>
+                        <textarea name="des" id="des" cols="30" rows="5" class="form-control"
+                            formControlName="jobDescription"></textarea>
+                         <p *ngIf="(Validation && f['jobDescription'].errors)" style="color: red;">Required</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card col-lg-6 col-md-6 col-12 ms-5 mt-5">
+            <div class="card-body">
+                <form [formGroup]="mainform">
+                    <div class="">
+                        <label class="pb-3">Job Qualification :</label>
+                        <textarea name="qual" id="qual" cols="30" rows="5" class="form-control"
+                            formControlName="jobQualification"></textarea>
+                        <p *ngIf="(Validation && f['jobQualification'].errors)" style="color: red;">Required</p>    
+                    </div>
+                    <div class="pt-3">
+                        <label class="pb-3">Job Highlights :</label>
+                        <textarea name="high" id="high" cols="30" rows="5" class="form-control"
+                            formControlName="jobHighlights"></textarea>
+                        <p *ngIf="(Validation && f['jobHighlights'].errors)" style="color: red;">Required</p>    
+                    </div>
+                    <div class="pt-3">
+                        <label class="pb-3">Job Responsibilities :</label>
+                        <textarea name="res" id="res" cols="30" rows="5" class="form-control"
+                            formControlName="jobResponsibilities"></textarea>
+                        <p *ngIf="(Validation && f['jobResponsibilities'].errors)" style="color: red;">Required</p>    
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
