@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="d-flex">
+        <div class="card cd1">
+            <div class="card-body">
+                <div class="text-center pt-5">
+                    <i class="fa fa-user text-white" style="font-size: 100px;"></i>
+                    <h2 class="text-white head pt-3 pb-3">Welcome</h2>
+                    <h3 class="text-white head">Good to see you again</h3>
+                    <p class="text-white pt-3 para">Create your account by filling the form</p>
+                    <div class="pt-3">
+                        <i class="fa fa-instagram icons" style="font-size: 30px;"></i>&nbsp;&nbsp;
+                        <i class="fa fa-twitter icons" style="font-size: 30px;"></i>&nbsp;&nbsp;
+                        <i class="fa fa-linkedin icons" style="font-size: 30px;"></i>&nbsp;&nbsp;
+                        <i class="fa fa-dribbble icons" style="font-size: 30px;"></i>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card cd2">
+            <div class="card-body">
+                <h3 class="text-center pt-5 log">LOGIN</h3>
+                <form [formGroup]="mainform">
+                    <div class="pt-5">
+                        <input type="text" name="name" id="name" class="form-control input" (input)="inputs()" placeholder="Username" formControlName="userName">
+                        <p *ngIf="(validation && f['userName'].errors)" style="color: red;"> *Required</p>
+                        <p *ngIf="errorMessage == 'Invalid Username.!'" style="color: red;">{{errorMessage}}</p>
+                    </div>
+                    <div class="pt-5">
+                        <input [type]="changeType?'password':'text'" name="pwd" (input)="inputs()" id="pwd" class="form-control input" placeholder="Password" formControlName="password">
+                        <p *ngIf="(validation && f['password'].errors)" style="color: red;"> *Required</p>
+                        <p *ngIf="errorMessage == 'Password is wrong.!'" style="color: red;">{{errorMessage}}</p>
+                    </div>
+                    <div class="pt-4 px-2">
+                        <input type="checkbox" name="check1" id="check1" (click)="onclick()">&nbsp;
+                        <label class="clr">Show Password</label>
+                    </div>
+                </form>
+                <div class="float-end">
+                    <span class="clr">Forgot Password?</span>
+                </div>
+                <div class="pt-5">
+                    <button class="btn form-control" (click)="onsubmit()">Login</button>
+                </div>
+                <div class="pt-3 pb-4 text-center">
+                    <p class="clr">Don't have an account?&nbsp; <span class="clr">Sign up</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
